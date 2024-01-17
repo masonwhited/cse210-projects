@@ -20,5 +20,19 @@ class Program
             n += numbers[i];
         }
         Console.WriteLine($"Sum = {n}.");
+
+        float average = ((float)n) / (numbers.Count);
+        Console.WriteLine($"Average = {average}.");
+
+        int max = numbers[0];
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                max = number;
+            }
+
+        }
+        Console.WriteLine($"Max = {max}.");
     }
 }
