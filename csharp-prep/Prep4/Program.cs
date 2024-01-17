@@ -5,11 +5,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Please enter a list of numbers (type 0 to end)");
         List<int> numbers = new List<int>();
         int n;
         do
         {
-            Console.WriteLine("Please enter a number: ");
+            Console.WriteLine("Enter number: ");
             n = int.Parse(Console.ReadLine());
             numbers.Add(n);
         }
