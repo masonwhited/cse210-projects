@@ -24,7 +24,6 @@ class Program
 
         foreach (var j in jobs)
         {
-            // System.Console.WriteLine($"{c.make} {c.model}: totalRange = {c.TotalRange()}");
             j.Display();
         }
     }
