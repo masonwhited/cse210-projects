@@ -1,3 +1,4 @@
+namespace Journal;
 class Filemanager
 {
 

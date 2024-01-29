@@ -1,3 +1,4 @@
+namespace Journal;
 using System;
 
 class Program
