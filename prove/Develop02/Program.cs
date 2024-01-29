@@ -14,7 +14,45 @@ class Program
     }
     public void Run()
     {
+        bool keepGoing = true;
 
+        while (keepGoing)
+        {
+            var selection = ShowMenu();
+
+            if (selection == 1)
+            {
+                //Prompt user with a random prompt
+                var prompt = "This is a random prompt";
+                //Read in user input
+                var placeholderResponse = "This is what the user typed in";
+                var entry = new Entry(placeholderResponse, prompt);
+            }
+
+            if (selection == 2)
+            {
+                //Display Entry 
+            }
+
+            if (selection == 3)
+            {
+                //Save to File 
+            }
+            if (selection == 4)
+            {
+                //Load File 
+            }
+            else if (selection == 5)
+            {
+                keepGoing = false;
+            }
+        }
+        static int ShowMenu()
+        {
+            Console.WriteLine("Select Option: \n 1. Add Entry \n 2. Display Entries...");
+            string input = Console.ReadLine();
+            return int.Parse(input);
+        }
     }
     public void SaveToFile()
     {

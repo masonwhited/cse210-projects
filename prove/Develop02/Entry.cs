@@ -8,7 +8,8 @@ public class Entry
     public string date;
     public Entry(string response, string prompt)
     {
-
+        this.response = response;
+        this.prompt = prompt;
     }
     public Entry(string import)
     {
