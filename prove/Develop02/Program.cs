@@ -7,12 +7,13 @@ class Program
     static void Main(string[] args)
     {
         // Console.Clear();
+        Run();
     }
     public string GetPrompt()
     {
         return "";
     }
-    public void Run()
+    static public void Run()
     {
         bool keepGoing = true;
 
