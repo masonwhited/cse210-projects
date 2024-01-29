@@ -1,5 +1,5 @@
 namespace Journal;
-class Filemanager
+public class Menu
 {
 
 }

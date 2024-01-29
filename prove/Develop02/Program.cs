@@ -3,8 +3,25 @@ using System;
 
 class Program
 {
+    public Journal journal;
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        // Console.Clear();
+    }
+    public string GetPrompt()
+    {
+        return "";
+    }
+    public void Run()
+    {
+
+    }
+    public void SaveToFile()
+    {
+
+    }
+    public void LoadFromFile()
+    {
+
     }
 }
