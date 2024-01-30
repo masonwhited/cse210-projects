@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 namespace Journal;
 using System;
 
@@ -9,9 +11,17 @@ class Program
         // Console.Clear();
         Run();
     }
-    public string GetPrompt()
+    static public string GetPrompt()
     {
-        return "";
+        string[] prompts = new string[5];
+        prompts[0] = "Who was the most interesting person I interacted with today?";
+        prompts[1] = "What was the best part of my day?";
+        prompts[2] = "How did I see the hand of the Lord in my life today?";
+        prompts[3] = "What was the strongest emotion I felt today?";
+        prompts[4] = "If I had one thing I could do over today, what would it be?";
+        Random random = new Random();
+        int randomNumber = random.Next(0, 5);
+        return prompts[randomNumber];
     }
     static public void Run()
     {
@@ -24,10 +34,10 @@ class Program
             if (selection == 1)
             {
                 //Prompt user with a random prompt
-                var prompt = "This is a random prompt";
+                var prompt = GetPrompt();
                 //Read in user input
-                var placeholderResponse = "This is what the user typed in";
-                var entry = new Entry(placeholderResponse, prompt);
+                var Response = "temporary  response placeholder";
+                var entry = new Entry(Response, prompt);
             }
 
             if (selection == 2)
