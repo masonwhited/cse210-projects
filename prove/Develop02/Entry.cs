@@ -10,10 +10,13 @@ public class Entry
     {
         this.response = response;
         this.prompt = prompt;
+        date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
     }
     public void Display()
     {
-
+        Console.WriteLine("Prompt: " + prompt);
+        Console.WriteLine("Response: " + response);
+        Console.WriteLine("Date: " + date);
     }
     public string Export()
     {
