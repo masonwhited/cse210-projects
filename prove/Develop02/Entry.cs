@@ -11,10 +11,6 @@ public class Entry
         this.response = response;
         this.prompt = prompt;
     }
-    public Entry(string import)
-    {
-
-    }
     public void Display()
     {
 

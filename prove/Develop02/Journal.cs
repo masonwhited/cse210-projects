@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Journal;
 public class Journal
 {
@@ -8,7 +10,10 @@ public class Journal
     }
     public Journal(string import)
     {
-
+        string[] lines = import.Split('\n');
+        int i = 0;
+        while (i < lines.Length && !lines[i].StartsWith("##"))
+            i++;
     }
     public void AddEntry(Entry entry)
     {
@@ -16,10 +21,14 @@ public class Journal
     }
     public void Display()
     {
-
+        foreach (Entry e in entries)
+            Console.WriteLine(e.ToString());
     }
     public string Export()
     {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        foreach (Entry e in entries)
+            sb.AppendLine(e.Export());
+        return sb.ToString();
     }
 }
