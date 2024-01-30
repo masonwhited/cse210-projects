@@ -50,7 +50,7 @@ class Program
         }
         static int ShowMenu()
         {
-            Console.WriteLine("Select Option: \n 1. Add Entry \n 2. Display Entries...");
+            Console.WriteLine("Select Option: \n 1. Add Entry \n 2. Display Entries \n 3. Save File \n 4. Load File \n 5. Quit");
             string input = Console.ReadLine();
             return int.Parse(input);
         }
