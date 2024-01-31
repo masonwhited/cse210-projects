@@ -39,6 +39,7 @@ class Program
                 //Read in user input
                 string Response = Console.ReadLine();
                 var entry = new Entry(Response, prompt);
+                Console.Clear();
             }
 
             if (selection == 2)
@@ -57,6 +58,7 @@ class Program
             else if (selection == 5)
             {
                 keepGoing = false;
+                Console.Clear();
             }
         }
         static int ShowMenu()
