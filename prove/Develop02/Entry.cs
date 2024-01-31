@@ -18,6 +18,10 @@ public class Entry
         Console.WriteLine("Response: " + response);
         Console.WriteLine("Date: " + date);
     }
+    public void DisplayPrompt()
+    {
+        Console.Write("Prompt: " + prompt);
+    }
     public string Export()
     {
         return "";

@@ -35,8 +35,9 @@ class Program
             {
                 //Prompt user with a random prompt
                 var prompt = GetPrompt();
+                Console.WriteLine($"{prompt}: \n");
                 //Read in user input
-                var Response = "temporary  response placeholder";
+                string Response = Console.ReadLine();
                 var entry = new Entry(Response, prompt);
             }
 
