@@ -10,10 +10,7 @@ public class Journal
     }
     public Journal(string import)
     {
-        string[] lines = import.Split('\n');
-        int i = 0;
-        while (i < lines.Length && !lines[i].StartsWith("##"))
-            i++;
+
     }
     public void AddEntry(Entry entry)
     {
