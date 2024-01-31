@@ -18,8 +18,7 @@ public class Journal
     }
     public void Display()
     {
-        foreach (Entry e in entries)
-            Console.WriteLine(e.ToString());
+
     }
     public string Export()
     {

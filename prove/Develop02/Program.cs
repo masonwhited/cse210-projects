@@ -6,6 +6,8 @@ using Microsoft.VisualBasic;
 
 class Program
 {
+    public Journal journal;
+    public Entry entry;
     static void Main(string[] args)
     {
         // Console.Clear();
