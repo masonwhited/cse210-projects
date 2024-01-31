@@ -2,13 +2,14 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Journal;
 using System;
+using Microsoft.VisualBasic;
 
 class Program
 {
-    public Journal journal;
     static void Main(string[] args)
     {
         // Console.Clear();
+        var journal = new Journal();
         Run();
     }
     static public string GetPrompt()
