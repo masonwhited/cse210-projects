@@ -8,7 +8,7 @@ public class Journal
     {
         entries = new List<Entry>();
     }
-    public Journal(string import)
+    public Journal(string[] import)
     {
 
     }
@@ -23,9 +23,6 @@ public class Journal
     }
     public string Export()
     {
-        StringBuilder sb = new StringBuilder();
-        foreach (Entry e in entries)
-            sb.AppendLine(e.Export());
-        return sb.ToString();
+        return "";
     }
 }

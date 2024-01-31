@@ -29,6 +29,7 @@ class Program
 
         while (keepGoing)
         {
+            Console.Clear();
             var selection = ShowMenu();
 
             if (selection == 1)
@@ -45,6 +46,7 @@ class Program
             if (selection == 2)
             {
                 //Display Entry 
+                Console.Clear();
             }
 
             if (selection == 3)
@@ -58,12 +60,15 @@ class Program
             else if (selection == 5)
             {
                 keepGoing = false;
-                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Selection\nPlease try again.");
             }
         }
         static int ShowMenu()
         {
-            Console.WriteLine("Select Option: \n 1. Add Entry \n 2. Display Entries \n 3. Save File \n 4. Load File \n 5. Quit");
+            Console.WriteLine("Select Option: \n______________ \n 1. Add Entry \n 2. Display Entries \n 3. Save File \n 4. Load File \n 5. Quit");
             string input = Console.ReadLine();
             return int.Parse(input);
         }
