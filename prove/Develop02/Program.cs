@@ -54,7 +54,7 @@ class Program
 
             if (selection == 3)
             {
-                //Save to File 
+                //Save to File
             }
             if (selection == 4)
             {
@@ -76,12 +76,14 @@ class Program
             return int.Parse(input);
         }
     }
-    public void SaveToFile()
+    static string SaveToFile()
     {
-
+        return "";
     }
-    public void LoadFromFile()
+    static string[] LoadFromFile()
     {
-
+        Console.Write("Enter filename: ");
+        var filename = Console.ReadLine();
+        return System.IO.File.ReadAllLines(filename);
     }
 }
