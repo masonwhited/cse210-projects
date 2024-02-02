@@ -6,9 +6,6 @@ using Microsoft.VisualBasic;
 
 class Program
 {
-    public Journal journal;
-    public Entry entry;
-    public GetPrompt prompts;
     static void Main(string[] args)
     {
         // Console.Clear();
