@@ -27,14 +27,16 @@ class Program
 
             if (selection == 1)
             {
+                Console.Clear();
                 var prompts = new GetPrompt();
                 //Prompt user with a random prompt
                 string prompt = prompts.Prompt();
+                //Displays prompt
                 Console.WriteLine($"{prompt}: \n");
                 //Read in user input
                 string Response = Console.ReadLine();
+                //Add the response to the journal
                 var entry = new Entry(Response, prompt);
-                Console.Clear();
             }
 
             if (selection == 2)
@@ -53,6 +55,7 @@ class Program
             }
             else if (selection == 5)
             {
+                Console.Clear();
                 keepGoing = false;
             }
             else
