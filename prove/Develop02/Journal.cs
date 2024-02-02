@@ -18,7 +18,10 @@ public class Journal
     }
     public void Display()
     {
-
+        foreach (var item in entries)
+        {
+            Console.WriteLine($"Date: {item.date}, Title: {item.prompt}, Content: {item.response}");
+        }
     }
     public string Export()
     {

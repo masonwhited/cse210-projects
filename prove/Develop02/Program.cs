@@ -29,26 +29,30 @@ class Program
                 //Prompt user with a random prompt
                 string prompt = prompts.Prompt();
                 //Displays prompt
-                Console.WriteLine($"{prompt}: \n");
+                prompts.Display(prompt);
                 //Read in user input
-                string Response = Console.ReadLine();
+                string response = Console.ReadLine();
                 //Add the response to the journal
-                var entry = new Entry(Response, prompt);
+                var entry = new Entry(response, prompt);
             }
 
             if (selection == 2)
             {
                 //Display Entry 
+                var journal = new Journal();
                 Console.Clear();
+                journal.Display();
             }
 
             if (selection == 3)
             {
                 //Save to File
+
             }
             if (selection == 4)
             {
-                //Load File 
+                //Load File
+                LoadFromFile();
             }
             else if (selection == 5)
             {
@@ -67,14 +71,17 @@ class Program
             return int.Parse(input);
         }
     }
-    static string SaveToFile()
-    {
-        return "";
-    }
     static string[] LoadFromFile()
     {
         Console.Write("Enter filename: ");
         var filename = Console.ReadLine();
         return System.IO.File.ReadAllLines(filename);
     }
+    static void SaveToFile(string[] lines)
+    {
+        Console.Write("Enter filename: ");
+        var filename = Console.ReadLine();
+        System.IO.File.WriteAllLines(filename, lines);
+    }
+
 }

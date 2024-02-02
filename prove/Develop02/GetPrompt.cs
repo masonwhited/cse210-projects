@@ -1,3 +1,4 @@
+namespace Journal;
 public class GetPrompt
 {
     string[] prompts = new string[5];
@@ -14,5 +15,9 @@ public class GetPrompt
         Random random = new Random();
         int randomNumber = random.Next(0, 5);
         return prompts[randomNumber];
+    }
+    public void Display(string prompt)
+    {
+        Console.WriteLine($"{prompt}: \n");
     }
 }
