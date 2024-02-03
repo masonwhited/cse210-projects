@@ -24,7 +24,7 @@ public class Entry
     }
     public string DisplayString()
     {
-        return $"{date} \n{prompt} \n{response}";
+        return $"{date} \n{prompt} \n{response}\n";
     }
     public string Export()
     {
