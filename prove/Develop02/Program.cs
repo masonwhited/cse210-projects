@@ -1,16 +1,11 @@
-using System.Reflection.Metadata.Ecma335;
-
 namespace Journal;
 using System;
-using Microsoft.VisualBasic;
 
 class Program
 {
 
     static void Main(string[] args)
     {
-        // Console.Clear();
-        Journal journal = new Journal();
         Run();
     }
 
@@ -39,20 +34,20 @@ class Program
                 journal.AddEntry(entry);
             }
 
-            if (selection == 2)
+            else if (selection == 2)
             {
                 //Display Entry 
                 Console.Clear();
                 journal.Display();
             }
 
-            if (selection == 3)
+            else if (selection == 3)
             {
                 //Save to File
                 var lines = journal.Export();
                 WriteFile(lines);
             }
-            if (selection == 4)
+            else if (selection == 4)
             {
                 //Load File
                 var lines = ReadFile();
