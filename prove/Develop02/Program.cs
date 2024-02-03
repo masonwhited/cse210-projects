@@ -3,7 +3,6 @@ using System;
 
 class Program
 {
-
     static void Main(string[] args)
     {
         Run();
@@ -33,14 +32,12 @@ class Program
                 var entry = new Entry(response, prompt);
                 journal.AddEntry(entry);
             }
-
             else if (selection == 2)
             {
                 //Display Entry 
                 Console.Clear();
                 journal.Display();
             }
-
             else if (selection == 3)
             {
                 //Save to File
@@ -82,5 +79,4 @@ class Program
         var filename = Console.ReadLine();
         System.IO.File.WriteAllLines(filename, lines);
     }
-
 }
