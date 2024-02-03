@@ -14,14 +14,20 @@ public class Entry
         date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
         entry = $"{date} \n {prompt} \n {response}";
     }
-    public void Display()
+    public Entry(string import)
     {
-        Console.WriteLine("Prompt: " + prompt);
-        Console.WriteLine("Response: " + response);
-        Console.WriteLine("Date: " + date);
+        var parts = import.Split("|");
+        date = parts[0];
+        prompt = parts[1];
+        response = parts[2];
+
+    }
+    public string DisplayString()
+    {
+        return $"{date} \n{prompt} \n{response}";
     }
     public string Export()
     {
-        return "";
+        return $"{date}|{prompt}|{response}";
     }
 }

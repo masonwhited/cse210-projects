@@ -10,7 +10,12 @@ public class Journal
     }
     public Journal(string[] import)
     {
-
+        entries = new List<Entry>();
+        foreach (var line in import)
+        {
+            var entry = new Entry(line);
+            entries.Add(entry);
+        }
     }
     public void AddEntry(Entry entry)
     {
@@ -18,13 +23,20 @@ public class Journal
     }
     public void Display()
     {
-        foreach (var item in entries)
+        foreach (var entry in entries)
         {
-            Console.WriteLine($"Date: {item.date}, Title: {item.prompt}, Content: {item.response}");
+            Console.WriteLine(entry.DisplayString());
         }
+        Console.WriteLine("\nPress any key to continue...");
+        Console.ReadKey();
     }
-    public string Export()
+    public string[] Export()
     {
-        return "";
+        var exportLines = new List<string>();
+        foreach (var entry in entries)
+        {
+            exportLines.Add(entry.Export());
+        }
+        return exportLines.ToArray();
     }
 }

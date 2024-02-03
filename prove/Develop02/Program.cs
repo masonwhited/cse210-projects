@@ -6,15 +6,17 @@ using Microsoft.VisualBasic;
 
 class Program
 {
+
     static void Main(string[] args)
     {
         // Console.Clear();
-        var journal = new Journal();
+        Journal journal = new Journal();
         Run();
     }
 
     static public void Run()
     {
+        Journal journal = new Journal();
         bool keepGoing = true;
 
         while (keepGoing)
@@ -34,12 +36,12 @@ class Program
                 string response = Console.ReadLine();
                 //Add the response to the journal
                 var entry = new Entry(response, prompt);
+                journal.AddEntry(entry);
             }
 
             if (selection == 2)
             {
                 //Display Entry 
-                var journal = new Journal();
                 Console.Clear();
                 journal.Display();
             }
@@ -47,12 +49,14 @@ class Program
             if (selection == 3)
             {
                 //Save to File
-
+                var lines = journal.Export();
+                WriteFile(lines);
             }
             if (selection == 4)
             {
                 //Load File
-                LoadFromFile();
+                var lines = ReadFile();
+                journal = new Journal(lines);
             }
             else if (selection == 5)
             {
@@ -71,13 +75,13 @@ class Program
             return int.Parse(input);
         }
     }
-    static string[] LoadFromFile()
+    static string[] ReadFile()
     {
         Console.Write("Enter filename: ");
         var filename = Console.ReadLine();
         return System.IO.File.ReadAllLines(filename);
     }
-    static void SaveToFile(string[] lines)
+    static void WriteFile(string[] lines)
     {
         Console.Write("Enter filename: ");
         var filename = Console.ReadLine();
