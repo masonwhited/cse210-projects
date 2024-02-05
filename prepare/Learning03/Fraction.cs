@@ -7,9 +7,8 @@ public class Fraction
     // Constructors
     public Fraction()
     {
-        topNumber = 1;
-        bottomNumber = 1;
-        Console.WriteLine($"{topNumber}/{bottomNumber}");
+        var number = "1/1";
+        Console.WriteLine($"{number}");
     }
     public Fraction(int num)
     {
