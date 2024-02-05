@@ -10,13 +10,13 @@ public class Fraction
         var number = "1/1";
         Console.WriteLine($"{number}");
     }
-    public Fraction(int num)
+    public void Numerator(int num)
     {
         topNumber = num;
         bottomNumber = 1;
         Console.WriteLine($"{topNumber}/{bottomNumber}");
     }
-    public Fraction(int top, int bottom)
+    public void Denominator(int top, int bottom)
     {
         topNumber = top;
         bottomNumber = bottom;
