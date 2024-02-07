@@ -1,26 +1,34 @@
 using System.Dynamic;
 using System.Globalization;
-
+using System.Reflection.Metadata.Ecma335;
 public class Fraction
 {
-    private int topNumber { get; set; }
-    private int bottomNumber { get; set; }
+    private int topNumber;
+    private int bottomNumber;
     // Constructors
     public Fraction()
     {
-        var number = "1/1";
-        Console.WriteLine($"{number}");
+        topNumber = 1;
+        bottomNumber = 1;
     }
     public Fraction(int num)
     {
         topNumber = num;
         bottomNumber = 1;
-        Console.WriteLine($"{topNumber}/{bottomNumber}");
     }
     public Fraction(int top, int bottom)
     {
         topNumber = top;
         bottomNumber = bottom;
-        Console.WriteLine($"{topNumber}/{bottomNumber}");
+    }
+
+    public string GetFractionString()
+    {
+        string line = $"{topNumber}/{bottomNumber}";
+        return line;
+    }
+    public double GetDecimalValue()
+    {
+        return (double)topNumber / (double)bottomNumber;
     }
 }
