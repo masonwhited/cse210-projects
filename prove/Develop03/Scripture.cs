@@ -33,8 +33,10 @@ public class Scripture
         //creates a for loop to parse through the list of words, adds to the wordCount, and displays to the terminal
         for (int i = 2; i < parts.Count(); i++)
         {
-            Word word = new Word();
-            word.word = parts[i];
+            Word word = new Word
+            {
+                word = parts[i]
+            };
             wordCount.Add(i - 2);
             words.Add(word);
             Console.Write($"{parts[i]} ");
