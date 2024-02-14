@@ -5,6 +5,10 @@ public class Word
     //creates a variable to hold the string word
     public string word;
 
+    public string ReturnWord()
+    {
+        return word;
+    }
     // Replaces all non-punctuation characters in the current word with the underscore character ("_") to hide the word.
     public void Hide()
     {
