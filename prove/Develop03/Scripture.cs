@@ -4,7 +4,7 @@ using Microsoft.VisualBasic;
 public class Scripture
 {
     //create a variable to hold our scripture string
-    public string scripture;
+    private string scripture;
 
     // creates an instance of the Reference Class
     public Reference reference = new Reference();
@@ -14,6 +14,10 @@ public class Scripture
     //creates a list of numbers for each word in the scripture text 
     public List<int> wordCount = new List<int>();
 
+    public Scripture(string script)
+    {
+        scripture = script;
+    }
     //creates a method that passes the scripture into the BuildReference method and displays to the terminal
     public void DisplayReference()
     {

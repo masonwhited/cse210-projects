@@ -8,16 +8,13 @@ class Program
     {
         //Console.WriteLine("Hello Develop03 World!");
 
-        // Creates an instance of the Scripture class
-        Scripture scripture = new Scripture();
-
         //creates a variable to hold the string scripture
         string script = "John 3:16 For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.";
 
         //string script = "Alma 12:27 But behold, it was not so; but it was appointed unto men that they must die; and after death, they must come to judgment, even that same judgment of which we have spoken, which is the end.";
 
         //passes the variable script into the variable scripture in the Scripture class
-        scripture.scripture = script;
+        Scripture scripture = new Scripture(script);
 
         //clears the terminal
         Console.Clear();
