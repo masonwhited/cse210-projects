@@ -42,34 +42,56 @@ public class Scripture
     {
         //creates an instance of Random
         Random rnd = new Random();
-        //create a series of if else if statements to determine and remove and replace a select number of words with underscores then displays it to the terminal.
+        // Check if the number of words is greater than 10
         if (wordCount.Count() > 10)
         {
+            // If so, hide 6 random words
             for (int i = 0; i < 6; i++)
             {
+                // Generate a random index within the range of the wordCount list
                 int randInt = rnd.Next(wordCount.Count());
+
+                // Hide the word at the random index
                 words[wordCount[randInt]].Hide();
+
+                // Remove the word from the wordCount list
                 wordCount.RemoveAt(randInt);
             }
         }
+        // Check if the number of words is greater than 3
         else if (wordCount.Count() > 3)
         {
+            // If so, hide 3 random words
             for (int i = 0; i < 3; i++)
             {
+                // Generate a random index within the range of the wordCount list
                 int randInt = rnd.Next(wordCount.Count());
+
+                // Hide the word at the random index
                 words[wordCount[randInt]].Hide();
+
+                // Remove the word from the wordCount list
                 wordCount.RemoveAt(randInt);
             }
         }
+        // If the number of words is less than or equal to 3
         else
         {
+            // Hide 1 random word
             for (int i = 0; i < 1; i++)
             {
+                // Generate a random index within the range of the wordCount list
                 int randInt = rnd.Next(wordCount.Count());
+
+                // Hide the word at the random index
                 words[wordCount[randInt]].Hide();
+
+                // Remove the word from the wordCount list
                 wordCount.RemoveAt(randInt);
             }
         }
+
+        // Print the remaining words to the console
         foreach (Word word in words)
         {
             Console.Write($"{word.word} ");
