@@ -7,14 +7,14 @@ public class Assignment
     {
     }
 
-    public Assignment(string student, string subject)
+    public Assignment(string name, string topic)
     {
-        name = student;
-        topic = subject;
+        this.name = name;
+        this.topic = topic;
     }
 
     public string GetSummary()
     {
-        return $"{name} -- {topic}";
+        return $"{this.name} -- {this.topic}";
     }
 }
