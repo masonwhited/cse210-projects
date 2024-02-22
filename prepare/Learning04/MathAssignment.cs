@@ -10,6 +10,6 @@ class Math : Assignment
     }
     public string GetHomeworkList()
     {
-        return $"{name} -- {topic} \n Section {textbookSection} Problems: {problems}";
+        return $"{name} -- {topic} \n Section {textbookSection} Problems: {problems}\n";
     }
 }

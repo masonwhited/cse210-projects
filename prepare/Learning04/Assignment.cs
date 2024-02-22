@@ -11,6 +11,6 @@ public class Assignment
 
     public string GetSummary()
     {
-        return $"{name} -- {topic}";
+        return $"{name} -- {topic}\n";
     }
 }

@@ -8,12 +8,16 @@ class Program
         //Console.WriteLine("Hello Learning04 World!");
         string student = "James MacHine";
         string subject = "Math";
+        string subject2 = "English";
         string section = "2.7";
         string problems = "8-14";
+        string title = "The War of the Worlds";
         Assignment assignment = new Assignment(student, subject);
         Console.WriteLine(assignment.GetSummary());
         Math math = new Math(section, problems, student, subject);
         Console.WriteLine(math.GetHomeworkList());
+        Writing writing = new Writing(title, student, subject2);
+        Console.WriteLine(writing.GetWritingInformation());
 
         /*         Student s1 = new Student("id1", "Bob", "CSE");
                 Faculty f1 = new Faculty("id2", "Sue", "BioAg");
