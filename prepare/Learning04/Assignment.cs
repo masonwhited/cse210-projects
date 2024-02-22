@@ -1,7 +1,7 @@
 public class Assignment
 {
-    private string name;
-    private string topic;
+    protected string name;
+    protected string topic;
 
     public Assignment(string name, string topic)
     {
