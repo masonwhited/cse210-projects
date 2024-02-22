@@ -3,10 +3,6 @@ public class Assignment
     private string name;
     private string topic;
 
-    public Assignment()
-    {
-    }
-
     public Assignment(string name, string topic)
     {
         this.name = name;
@@ -15,6 +11,6 @@ public class Assignment
 
     public string GetSummary()
     {
-        return $"{this.name} -- {this.topic}";
+        return $"{name} -- {topic}";
     }
 }
