@@ -25,7 +25,7 @@ class Program
                 Activity activity1 = new Activity(name1, desc1);
                 Console.Clear();
                 activity1.DisplayBegin();
-                int seconds = activity.GetSeconds();
+                activity.GetSeconds();
             }
             else if (selection == 2)
             {
@@ -34,7 +34,7 @@ class Program
                 Activity activity2 = new Activity(name2, desc2);
                 Console.Clear();
                 activity2.DisplayBegin();
-                int seconds = activity.GetSeconds();
+                activity.GetSeconds();
             }
             else if (selection == 3)
             {
@@ -43,7 +43,7 @@ class Program
                 Activity activity3 = new Activity(name3, desc3);
                 Console.Clear();
                 activity3.DisplayBegin();
-                int seconds = activity.GetSeconds();
+                activity.GetSeconds();
             }
             else if (selection == 4)
             {
