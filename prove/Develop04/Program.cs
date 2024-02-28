@@ -20,15 +20,18 @@ class Program
 
             if (selection == 1)
             {
-                activity.DisplayBegin("Breathing Activity");
+                string name1 = "Breathing Activity";
+                activity.DisplayBegin(name1);
             }
             else if (selection == 2)
             {
-                activity.DisplayBegin("Listing Activity");
+                string name2 = "Listing Activity";
+                activity.DisplayBegin(name2);
             }
             else if (selection == 3)
             {
-                activity.DisplayBegin("Reflection Activity");
+                string name3 = "Reflection Activity";
+                activity.DisplayBegin(name3);
             }
             else if (selection == 4)
             {
