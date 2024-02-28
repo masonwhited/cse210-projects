@@ -10,6 +10,7 @@ class Program
 
     static public void Run()
     {
+        Activity activity = new();
         bool keepGoing = true;
 
         while (keepGoing)
@@ -20,21 +21,29 @@ class Program
             if (selection == 1)
             {
                 string name1 = "Breathing Activity";
-                Activity activity1 = new Activity(name1);
+                string desc1 = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+                Activity activity1 = new Activity(name1, desc1);
                 Console.Clear();
                 activity1.DisplayBegin();
+                int seconds = activity.GetSeconds();
             }
             else if (selection == 2)
             {
                 string name2 = "Listing Activity";
-                Activity activity2 = new Activity(name2);
+                string desc2 = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+                Activity activity2 = new Activity(name2, desc2);
+                Console.Clear();
                 activity2.DisplayBegin();
+                int seconds = activity.GetSeconds();
             }
             else if (selection == 3)
             {
                 string name3 = "Reflection Activity";
-                Activity activity3 = new Activity(name3);
+                string desc3 = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+                Activity activity3 = new Activity(name3, desc3);
+                Console.Clear();
                 activity3.DisplayBegin();
+                int seconds = activity.GetSeconds();
             }
             else if (selection == 4)
             {
