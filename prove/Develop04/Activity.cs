@@ -1,7 +1,13 @@
 class Activity
 {
-    public void DisplayBegin(string message)
+    private string name;
+
+    public Activity(string name)
     {
-        Console.WriteLine($"Welcome to the {message}.");
+        this.name = name;
+    }
+    public void DisplayBegin()
+    {
+        Console.WriteLine($"Welcome to the {name}.");
     }
 }

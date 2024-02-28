@@ -10,7 +10,6 @@ class Program
 
     static public void Run()
     {
-        Activity activity = new Activity();
         bool keepGoing = true;
 
         while (keepGoing)
@@ -21,17 +20,21 @@ class Program
             if (selection == 1)
             {
                 string name1 = "Breathing Activity";
-                activity.DisplayBegin(name1);
+                Activity activity1 = new Activity(name1);
+                Console.Clear();
+                activity1.DisplayBegin();
             }
             else if (selection == 2)
             {
                 string name2 = "Listing Activity";
-                activity.DisplayBegin(name2);
+                Activity activity2 = new Activity(name2);
+                activity2.DisplayBegin();
             }
             else if (selection == 3)
             {
                 string name3 = "Reflection Activity";
-                activity.DisplayBegin(name3);
+                Activity activity3 = new Activity(name3);
+                activity3.DisplayBegin();
             }
             else if (selection == 4)
             {
