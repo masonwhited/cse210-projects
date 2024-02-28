@@ -16,7 +16,9 @@ class Activity
     public void DisplayBegin()
     {
         Console.WriteLine($"Welcome to the {name}. \n");
+        Thread.Sleep(1000); // Pause for 1 second
         Console.WriteLine($"{desc} \n");
+        Thread.Sleep(3000); // Pause for another 3 seconds
     }
 
     public int GetSeconds()
