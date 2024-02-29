@@ -17,15 +17,15 @@ class Activity
     public void DisplayBegin()
     {
         Console.WriteLine($"Welcome to the {name}. \n");
-        Thread.Sleep(1000); // Pause for 1 second
+        WaitAnimate(1);
         Console.WriteLine($"{desc} \n");
-        Thread.Sleep(3000); // Pause for another 3 seconds
+        WaitAnimate(3);
     }
 
     public void DisplayEnd()
     {
         Console.WriteLine("Well Done! \n");
-        Thread.Sleep(2000); // Pause for 2 seconds
+        WaitAnimate(2);
         Console.WriteLine($"You have completed another {seconds / 1000} seconds of the {name}.");
     }
     public void GetSeconds()
@@ -40,5 +40,26 @@ class Activity
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(seconds);
         DateTime currentTime = DateTime.Now;
+    }
+
+    public void WaitAnimate(int limit)
+    {
+        int loop = 0;
+        while (loop < limit)
+        {
+            Console.Write("|");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("/");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("-");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("\\");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            loop += 1;
+        }
     }
 }

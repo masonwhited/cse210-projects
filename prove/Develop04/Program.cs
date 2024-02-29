@@ -26,6 +26,7 @@ class Program
                 Console.Clear();
                 activity1.DisplayBegin();
                 activity.GetSeconds();
+                activity.DisplayEnd();
             }
             else if (selection == 2)
             {
@@ -35,6 +36,7 @@ class Program
                 Console.Clear();
                 activity2.DisplayBegin();
                 activity.GetSeconds();
+                activity.DisplayEnd();
             }
             else if (selection == 3)
             {
@@ -44,6 +46,7 @@ class Program
                 Console.Clear();
                 activity3.DisplayBegin();
                 activity.GetSeconds();
+                activity.DisplayEnd();
             }
             else if (selection == 4)
             {
