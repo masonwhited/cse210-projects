@@ -1,69 +1,87 @@
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 
 class Program
 {
+    static Dictionary<string, int> log;
+
     static void Main(string[] args)
     {
-        Run();
+        log = getLog();
+        Console.Clear();
+        Activity activity = new Activity();
+
+        activity.displayMenu();
+        int choice = activity.getUserChoice();
+
+        while (choice != 4)
+        {
+            if (choice == 1)
+            {
+                Breathing breathingAct = new Breathing();
+                breathingAct.run();
+                Console.Clear();
+                log["Breathing"] += 1;
+            }
+            else if (choice == 2)
+            {
+                Reflection reflectAct = new Reflection();
+                reflectAct.run();
+                Console.Clear();
+                log["Reflection"] += 1;
+            }
+            else if (choice == 3)
+            {
+                Listing listAct = new Listing();
+                listAct.run();
+                Console.Clear();
+                log["Listing"] += 1;
+            }
+
+            activity.displayMenu();
+            choice = activity.getUserChoice();
+            writeLog(log);
+        }
     }
 
-    static public void Run()
+    static void writeLog(Dictionary<string, int> logs)
     {
-        Activity activity = new();
-        bool keepGoing = true;
-
-        while (keepGoing)
+        string[] activities = new string[] { "Breathing", "Reflection", "Listing" };
+        string[] entries = new string[logs.Count];
+        for (int i = 0; i < activities.Length; i++)
         {
-            Console.Clear();
-            var selection = ShowMenu();
-
-            if (selection == 1)
+            entries[i] = activities[i] + ";" + logs[activities[i]];
+        }
+        using (StreamWriter writer = new StreamWriter("activity_log.txt"))
+        {
+            foreach (string entry in entries)
             {
-                string name1 = "Breathing Activity";
-                string desc1 = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
-                Activity activity1 = new Activity(name1, desc1);
-                Console.Clear();
-                activity1.DisplayBegin();
-                activity.GetSeconds();
-                activity.DisplayEnd();
-            }
-            else if (selection == 2)
-            {
-                string name2 = "Listing Activity";
-                string desc2 = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
-                Activity activity2 = new Activity(name2, desc2);
-                Console.Clear();
-                activity2.DisplayBegin();
-                activity.GetSeconds();
-                activity.DisplayEnd();
-            }
-            else if (selection == 3)
-            {
-                string name3 = "Reflection Activity";
-                string desc3 = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-                Activity activity3 = new Activity(name3, desc3);
-                Console.Clear();
-                activity3.DisplayBegin();
-                activity.GetSeconds();
-                activity.DisplayEnd();
-            }
-            else if (selection == 4)
-            {
-                Console.Clear();
-                keepGoing = false;
-            }
-            else
-            {
-                Console.WriteLine("Invalid Selection\nPlease try again.");
-            }
-            static int ShowMenu()
-            {
-                Console.WriteLine("Menu Options: \n_____________ \n \n 1. Breathing Activity \n 2. Listing Activity \n 3. Reflection Activity \n 4. Quit \n");
-                Console.WriteLine("Select a choice from the menu:");
-                string input = Console.ReadLine();
-                return int.Parse(input);
+                writer.WriteLine(entry);
             }
         }
+    }
+
+    static Dictionary<string, int> getLog()
+    {
+        string fileName = "activity_log.txt";
+        Dictionary<string, int> log = new Dictionary<string, int>();
+        try
+        {
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach (string line in lines)
+            {
+                string[] entry = line.Split(";");
+                log.Add(entry[0], int.Parse(entry[1]));
+            }
+            return log;
+        }
+        catch
+        {
+            log.Add("Breathing", 0);
+            log.Add("Reflection", 0);
+            log.Add("Listing", 0);
+            return log;
+        }
+
     }
 }

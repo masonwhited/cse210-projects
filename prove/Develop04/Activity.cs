@@ -1,65 +1,71 @@
 class Activity
 {
-    private string name;
-    private string desc;
-    protected int seconds;
-
-    public Activity()
+    protected int _duration;
+    protected string _description;
+    protected string _name;
+    protected Random _generator = new Random();
+    private List<string> animationStrings = new List<string>() { "|", "/", "-", "\\", "|" };
+    public void displayMenu()
     {
-
-    }
-    public Activity(string name, string desc)
-    {
-        this.name = name;
-        this.desc = desc;
-    }
-
-    public void DisplayBegin()
-    {
-        Console.WriteLine($"Welcome to the {name}. \n");
-        WaitAnimate(1);
-        Console.WriteLine($"{desc} \n");
-        WaitAnimate(3);
+        Console.WriteLine("Menu Options:");
+        Console.WriteLine("   1. Start breathing activity");
+        Console.WriteLine("   2. Start reflecting activity");
+        Console.WriteLine("   3. Start listing activity");
+        Console.WriteLine("   4. Quit");
+        Console.Write("Select a choice from the menu: ");
     }
 
-    public void DisplayEnd()
+    public int getUserChoice()
     {
-        Console.WriteLine("Well Done! \n");
-        WaitAnimate(2);
-        Console.WriteLine($"You have completed another {seconds / 1000} seconds of the {name}.");
-    }
-    public void GetSeconds()
-    {
-        Console.WriteLine("How many seconds do you want to go for: ");
-        var input = Console.ReadLine();
-        seconds = int.Parse(input) * 1000;
-    }
-
-    public void Timer()
-    {
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(seconds);
-        DateTime currentTime = DateTime.Now;
-    }
-
-    public void WaitAnimate(int limit)
-    {
-        int loop = 0;
-        while (loop < limit)
+        int choice;
+        choice = int.Parse(Console.ReadLine());
+        while (choice < 1 || choice > 4)
         {
-            Console.Write("|");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("/");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("-");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("\\");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            loop += 1;
+            Console.WriteLine("Invalid choice, please try again.\n");
+            Console.Write("Select a choice from the menu: ");
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+            }
+            catch { }
+        }
+
+        return choice;
+    }
+
+    public void displayStartMessage()
+    {
+        Console.WriteLine($"Welcome to the {_name}.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
+    }
+
+    public void displayEndMessage()
+    {
+        Console.WriteLine("Well Done!");
+        displayAnimation();
+        Console.WriteLine($"\nYou completed another {_duration} seconds of the {_name}.");
+        displayAnimation();
+    }
+
+    public void displayAnimation()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (string symbol in animationStrings)
+            {
+                Console.Write(symbol);
+                Thread.Sleep(500);
+                Console.Write("\b \b");
+            }
         }
     }
+
+    public void setDuration()
+    {
+        Console.Write("How long, in seconds, would you like for your session? ");
+        _duration = int.Parse(Console.ReadLine());
+    }
+
 }
