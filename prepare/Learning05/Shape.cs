@@ -1,4 +1,4 @@
-public class Shape
+public abstract class Shape
 {
     private string color;
     public string GetColor()
