@@ -1,0 +1,4 @@
+class Lose : Maintain
+{
+
+}
